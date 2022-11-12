@@ -1,0 +1,223 @@
+input[type="checkbox"] {
+  display: none;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.book-container {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.book-container .background {
+  width: inherit;
+  height: inherit;
+  position: relative;
+  /* display: flex; */
+  background-image: linear-gradient(
+    to right bottom,
+    #d35400,
+    #dc6700,
+    #e47901,
+    #ec8a07,
+    #f39c12
+  );
+}
+.book-container .background .bg-left {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 50%;
+}
+.book-container .background .bg-left .logo {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  /* overflow: hidden; */
+  padding: 10px;
+}
+.book-container .background .bg-left .logo img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.book-container .background .bg-right img {
+  width: 100%;
+  height: 100%;
+}
+.book-container .background .bg-right {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 50%;
+  /* background: orange; */
+}
+
+.book {
+  display: flex;
+  position: absolute;
+  z-index: 1;
+  box-shadow: 0px 0px 29px 13px rgba(0, 0, 0, 0.215);
+}
+.book label {
+  text-transform: uppercase;
+  transition: 300ms ease-in-out;
+  display: flex;
+  padding: 0.2rem 0;
+}
+.book label:hover {
+  color: orange;
+}
+#cover {
+  width: 350px;
+  height: 600px;
+}
+#cover img {
+  width: 100%;
+  height: 100%;
+}
+.flip-book {
+  width: 350px;
+  height: 600px;
+  position: relative;
+  perspective: 1500px;
+}
+.flip {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform-origin: left;
+  transform-style: preserve-3d;
+  transform: rotateY(0deg);
+  transition: 0.5s;
+  color: #000;
+}
+.flip img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.front {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: white;
+  box-sizing: border-box;
+  padding: 0 13px;
+}
+.front .img {
+  position: absolute;
+  width: 100%;
+  height: 300px;
+  bottom: 3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  /* background-color: red; */
+  padding: 0.5rem;
+}
+.front img {
+  /* position: relative;
+  top: 1rem; */
+  width: 95%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.front p {
+  line-height: 25px;
+  margin-top: 0.5rem;
+  text-align: justify;
+}
+.front .page-title {
+  /* background-color: red; */
+  padding: 1.5rem 0;
+  text-transform: uppercase;
+  position: relative;
+  font-size: 1.5rem;
+  display: flex;
+  font-weight: 600;
+}
+.front .page-title::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background: orange;
+}
+
+.back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
+  background-color: #000;
+}
+.next-btn {
+  position: absolute;
+  bottom: 13px;
+  right: 13px;
+  cursor: pointer;
+  color: #000;
+}
+.back-btn {
+  position: absolute;
+  bottom: 13px;
+  right: 13px;
+  cursor: pointer;
+  color: #fff;
+}
+#page-1 {
+  z-index: 3;
+}
+#page-2 {
+  z-index: 2;
+}
+#page-3 {
+  z-index: 1;
+}
+#control-1:checked ~ .flip-book #page-1 {
+  transform: rotateY(-180deg);
+  z-index: 1;
+}
+#control-2:checked ~ .flip-book #page-2 {
+  transform: rotateY(-180deg);
+  z-index: 2;
+}
+#control-3:checked ~ .flip-book #page-3 {
+  transform: rotateY(-180deg);
+  z-index: 3;
+}
+
+.end-of-book {
+  /* background: red; */
+  height: 100%;
+  width: 100%;
+  display: grid;
+  place-items: center;
+}
+.end-of-book img {
+  /* background: red; */
+  height: 60%;
+  width: 80%;
+  display: grid;
+  place-items: center;
+}

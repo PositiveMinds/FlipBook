@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flip Book</title>
+    <link rel="stylesheet" href="assets/css/app.css" />
+  </head>
+
+  <body>
+    <div class="book-container">
+      <div class="background">
+        <div class="bg-left">
+          <div class="logo">
+            <img src="assets/images/logo.PNG" alt="" srcset="" />
+          </div>
+        </div>
+        <div class="bg-right">
+          <img
+            src="assets/images/House-interior-design-of-a-chic-living-room.webp"
+            alt=""
+            srcset=""
+          />
+        </div>
+      </div>
+
+      <div class="book">
+        <!-- For Next/Prev Controls -->
+        <input type="checkbox" id="control-1" />
+        <input type="checkbox" id="control-2" />
+        <input type="checkbox" id="control-3" />
+        <!-- Book Cover -->
+        <div id="cover">
+          <img src="assets/images/BB.jpg" alt="Cover" />
+        </div>
+        <!-- Pages -->
+        <div class="flip-book">
+          <!-- Page 1 -->
+          <div class="flip" id="page-1">
+            <div class="back">
+              <img src="assets/images/c.jpg" alt="" />
+              <label for="control-1" class="back-btn">Before</label>
+            </div>
+            <div class="front">
+              <span class="page-title">Self Love</span>
+              <p>
+                “To the people who love you, you are beautiful already. This is
+                not because they’re blind to your shortcomings but because they
+                so clearly see your soul. Your shortcomings then dim by
+                comparison. The people who care about you are willing to let you
+                be imperfect and beautiful, too." ― Victoria Moran.
+              </p>
+              <div class="img">
+                <img src="assets/images/self-love.png" alt="" srcset="" />
+              </div>
+              <label for="control-1" class="next-btn">NEXT</label>
+            </div>
+          </div>
+          <!-- Page 2 -->
+          <div class="flip" id="page-2">
+            <div class="back">
+              <img src="assets/images/SELF-LOVE.jpg" alt="" />
+              <label for="control-2" class="back-btn">Previous</label>
+            </div>
+            <div class="front">
+              <span class="page-title">Life is too short</span>
+              <p>
+                “Life is too short to waste any amount of time on wondering what
+                other people think about you. In the first place, if they had
+                better things going on in their lives, they wouldn't have the
+                time to sit around and talk about you. What's important to me is
+                not others' opinions of me, but what's important to me is my
+                opinion of myself.” ― C. JoyBell C.
+              </p>
+              <label for="control-2" class="next-btn">NEXT</label>
+            </div>
+          </div>
+          <!-- Page 3 -->
+          <div class="flip" id="page-3">
+            <div class="back">
+              <img src="assets/images/1.PNG" alt="" />
+              <label for="control-3" class="back-btn">Previous</label>
+            </div>
+            <div class="front">
+              <span class="page-title">You are beautiful</span>
+              <p>
+                “You can be the most beautiful person in the world and everybody
+                sees light and rainbows when they look at you, but if you
+                yourself don't know it, all of that doesn't even matter. Every
+                second that you spend on doubting your worth, every moment that
+                you use to criticize yourself; is a second of your life wasted,
+                is a moment of your life thrown away. It's not like you have
+                forever, so don't waste any of your seconds, don't throw even
+                one of your moments away.” ― C. JoyBell C.
+              </p>
+              <label for="control-3" class="next-btn">NEXT</label>
+            </div>
+          </div>
+          <!-- Page 4 -->
+          <div class="flip" id="page-end">
+            <div class="back">
+              <!-- <img src="assets/images/self.png" alt="" /> -->
+              <label for="control-end" class="back-btn">Previous</label>
+            </div>
+            <div class="front">
+              <div class="end-of-book">
+                <img src="assets/images/self.png" alt="" />
+                <h1>End</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
